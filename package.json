@@ -1,0 +1,38 @@
+{
+  "name": "locklift-sample",
+  "version": "1.0.0-alpha",
+  "description": "Sample use locklift with everdev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EverscaleGuild/locklift-sample.git"
+  },
+  "keywords": [
+    "tvm",
+    "solidity",
+    "locklift",
+    "everscale"
+  ],
+  "author": "EverscaleGuild",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EverscaleGuild/locklift-sample/issues"
+  },
+  "homepage": "https://github.com/EverscaleGuild/locklift-sample#readme",
+  "scripts": {
+    "nvm": "echo $npm_package_engines_node | cut -d'=' -f2",
+    "postinstall": "yarn everdev-setup",
+    "local-reset": "everdev se reset",
+    "everdev-setup": "everdev sol set --compiler 0.57.3 --linker 0.14.39",
+    "contract-build": "locklift build --config locklift.config.js",
+    "demo": "locklift run --config locklift.config.js --network local --script scripts/1-demo.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "everdev": "^1.1.1",
+    "locklift": "broxus/ton-locklift",
+    "ton-contracts": "broxus/ton-contracts"
+  }
+}
